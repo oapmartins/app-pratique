@@ -1,6 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:app_pratique/screens/login_page.dart';
-import 'package:app_pratique/screens/splash_page.dart';
+import 'package:app_pratique/pages/login/login_page.dart';
+import 'package:app_pratique/pages/splash/splash_page.dart';
 import 'package:app_pratique/utils/routes.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:flutter/material.dart';
@@ -23,11 +23,11 @@ class MyApp extends StatelessWidget {
       getPages: pages,
       home: AnimatedSplashScreen(
         backgroundColor: Colors.black,
+        duration: 200,
+        splashTransition: SplashTransition.rotationTransition,
+        animationDuration: const Duration(milliseconds: 1000),
+        pageTransitionType: PageTransitionType.fade,
         splashIconSize: 90,
-        duration: 900,
-        splashTransition: SplashTransition.fadeTransition,
-        animationDuration: const Duration(milliseconds: 700),
-        pageTransitionType: PageTransitionType.leftToRight,
         splash: const SplashPage(),
         nextScreen: const LoginPage(),
       ),

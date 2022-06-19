@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
+import '../config_pages.dart';
+import '../home/home_page.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -79,7 +82,15 @@ class _LoginPageState extends State<LoginPage> {
                     Padding(
                       padding: const EdgeInsets.only(top: 20),
                       child: MaterialButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ConfigPages()),
+                          );
+                          // Get.to(const HomePage());
+                          // Get.off(() => const HomePage());
+                        },
                         color: primaryColor,
                         elevation: 0,
                         minWidth: Get.size.width,
@@ -90,10 +101,11 @@ class _LoginPageState extends State<LoginPage> {
                         child: const Text(
                           'Acessar conta',
                           style: TextStyle(
-                              fontSize: 15,
-                              fontFamily: 'SFUIDisplay',
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
+                            fontSize: 15,
+                            fontFamily: 'SFUIDisplay',
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),

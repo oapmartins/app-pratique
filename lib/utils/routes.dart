@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 
-import '../screens/home_page.dart';
-import '../screens/login_page.dart';
-import '../screens/splash_page.dart';
+import '../pages/home/home_page.dart';
+import '../pages/login/login_page.dart';
+import '../pages/splash/splash_page.dart';
 
 final pages = [
   GetPage(name: splashPageRoute, page: () => const SplashPage()),
